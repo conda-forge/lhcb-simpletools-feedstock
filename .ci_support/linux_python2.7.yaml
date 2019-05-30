@@ -1,5 +1,7 @@
+CONDA_BUILD_SYSROOT:
+- /opt/MacOSX10.10.sdk
 boost_cpp:
-- 1.68.0
+- 1.70.0
 c_compiler:
 - gcc
 c_compiler_version:
