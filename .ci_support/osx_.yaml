@@ -21,8 +21,3 @@ macos_min_version:
 pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
-  python:
-    min_pin: x.x
-    max_pin: x.x
-python:
-- '2.7'
