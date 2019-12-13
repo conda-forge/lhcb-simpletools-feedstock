@@ -23,7 +23,6 @@ requirements:
     - make
   host:
     - root_base
-    - root-dependencies
     - root-binaries
     - boost-cpp
   run:
