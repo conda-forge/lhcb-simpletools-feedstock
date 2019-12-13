@@ -1,0 +1,22 @@
+From 20ffadb613e4a552335dcc49ac87a53f5020d943 Mon Sep 17 00:00:00 2001
+From: Chris Burr <chrisburr@users.noreply.github.com>
+Date: Fri, 13 Dec 2019 11:19:39 +0100
+Subject: [PATCH] Fix build for Clang 9 + macOS + ROOT 6.18.02
+
+---
+ src/tuplescrambler.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/tuplescrambler.cc b/src/tuplescrambler.cc
+index 0257404..38d3d09 100644
+--- a/src/tuplescrambler.cc
++++ b/src/tuplescrambler.cc
+@@ -100,7 +100,7 @@ int main(int argc, char *argv[]) {
+ 	vector<int> entries;
+ 	INSERT_ELEMENTS(entries,0,total-1);
+ 	MyRandom rd;
+-	random_shuffle (entries.begin(), entries.end(),rd);
++	std::random_shuffle (entries.begin(), entries.end(),rd);
+ 	std::vector<int>::iterator it = entries.begin();
+ 	UInt_t i = 0, pc =0, k=0;
+ 	while( it != entries.end() ) {
