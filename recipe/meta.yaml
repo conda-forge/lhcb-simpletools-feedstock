@@ -10,9 +10,10 @@ source:
   sha256: c9b57458bf2078bdacb87dc2ef50c3cb9b85acc382a352c4c0a7d6ace22e116f
   patches:
     - 0001-Fix-linking-for-macOS.patch
+    - 0002-Fix-random_shuffle.patch
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win]
 
 requirements:
@@ -22,14 +23,13 @@ requirements:
     - cmake
     - make
   host:
-    - root
+    - root_base
+    - root-binaries
+    - root-dependencies
     - boost-cpp
-  run:
-    - root
 
 test:
   requires:
-    - python
     - scikit-hep-testdata
   commands:
     - FN=$(python -m skhep_testdata cms_hep_2012_tutorial/data.root)

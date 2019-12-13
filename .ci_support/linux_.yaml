@@ -1,5 +1,3 @@
-CONDA_BUILD_SYSROOT:
-- /opt/MacOSX10.10.sdk
 boost_cpp:
 - 1.70.0
 c_compiler:
@@ -19,8 +17,3 @@ docker_image:
 pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
-  python:
-    min_pin: x.x
-    max_pin: x.x
-python:
-- '3.6'

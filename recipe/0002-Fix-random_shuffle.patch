@@ -1,0 +1,79 @@
+From 97e3186f9db3b08700e81c5098eb46ca53ed099d Mon Sep 17 00:00:00 2001
+From: Chris Burr <chrisburr@users.noreply.github.com>
+Date: Fri, 13 Dec 2019 15:45:19 +0100
+Subject: [PATCH 1/2] Replace random_shuffle with std::shuffle
+
+---
+ src/tuplescrambler.cc | 16 ++--------------
+ 1 file changed, 2 insertions(+), 14 deletions(-)
+
+diff --git a/src/tuplescrambler.cc b/src/tuplescrambler.cc
+index 0257404..8d2c10f 100644
+--- a/src/tuplescrambler.cc
++++ b/src/tuplescrambler.cc
+@@ -29,8 +29,6 @@
+ #include <functional>
+ #include <numeric>
+ 
+-TRandom3*  rndGen;
+-
+ 	template <class T>
+ inline void INSERT_ELEMENTS (T& coll, int first, int last)
+ {
+@@ -40,15 +38,6 @@ inline void INSERT_ELEMENTS (T& coll, int first, int last)
+ }
+ using namespace std;
+ 
+-class MyRandom {
+-	public:
+-		ptrdiff_t operator() (ptrdiff_t max) {
+-			double tmp;
+-			tmp = static_cast<double>(rndGen->Rndm());
+-			return static_cast<ptrdiff_t>(tmp * max);
+-		}
+-};
+-
+ int main(int argc, char *argv[]) {
+ 	if(argc != 5 ){
+ 		cout << "tuplescrambler:  randomly scrambles an ntuple into a new file"<< endl;
+@@ -61,7 +50,7 @@ int main(int argc, char *argv[]) {
+ 	TString inname = argv[1];
+ 	TString tpath = argv[2];
+ 	TString name = tpath;
+-	rndGen = new TRandom3(atoi(argv[3]));
++	TMVA::RandomGenerator<TRandom3> rd(atoi(argv[3]));
+ 	TFile *sout1(0);
+ 	TString soutname1 = argv[4];
+ 
+@@ -99,8 +88,7 @@ int main(int argc, char *argv[]) {
+ 		sw.Start();
+ 	vector<int> entries;
+ 	INSERT_ELEMENTS(entries,0,total-1);
+-	MyRandom rd;
+-	random_shuffle (entries.begin(), entries.end(),rd);
++	std::shuffle(entries.begin(), entries.end(), rd);
+ 	std::vector<int>::iterator it = entries.begin();
+ 	UInt_t i = 0, pc =0, k=0;
+ 	while( it != entries.end() ) {
+
+From 717971f546dfd3e31474990f1ed322b51ff4f036 Mon Sep 17 00:00:00 2001
+From: Chris Burr <chrisburr@users.noreply.github.com>
+Date: Fri, 13 Dec 2019 16:03:55 +0100
+Subject: [PATCH 2/2] Add missing header
+
+---
+ src/tuplescrambler.cc | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/tuplescrambler.cc b/src/tuplescrambler.cc
+index 8d2c10f..7b4c4b2 100644
+--- a/src/tuplescrambler.cc
++++ b/src/tuplescrambler.cc
+@@ -18,6 +18,7 @@
+ #include <TTree.h>
+ #include <TRandom3.h>
+ #include <TStopwatch.h>
++#include <TMVA/Tools.h>
+ #include <vector>
+ #include <deque>
+ #include <list>
