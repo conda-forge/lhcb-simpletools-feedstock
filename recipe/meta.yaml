@@ -12,7 +12,7 @@ source:
     - 0001-Fix-linking-for-macOS.patch
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win]
 
 requirements:
@@ -22,10 +22,14 @@ requirements:
     - cmake
     - make
   host:
-    - root
+    - root_base
+    - root-dependencies
+    - root-binaries
     - boost-cpp
   run:
-    - root
+    - root_base
+    - root-dependencies
+    - root-binaries
 
 test:
   requires:
