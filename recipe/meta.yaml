@@ -13,7 +13,7 @@ source:
     - 0002-Fix-random_shuffle.patch
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win]
 
 requirements:
