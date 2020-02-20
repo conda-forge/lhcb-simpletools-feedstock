@@ -1,7 +1,7 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '10.9'
 boost_cpp:
-- 1.70.0
+- '1.72'
 c_compiler:
 - clang
 c_compiler_version:
@@ -21,3 +21,7 @@ macos_min_version:
 pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
+root_base:
+- 6.18.04
+root_binaries:
+- 6.18.04
