@@ -11,9 +11,10 @@ source:
   patches:
     - 0001-Fix-linking-for-macOS.patch
     - 0002-Fix-random_shuffle.patch
+    - 0003-Fix-includes-for-ROOT-6.22.patch
 
 build:
-  number: 6
+  number: 7
   skip: true  # [win]
 
 requirements:
@@ -27,6 +28,8 @@ requirements:
     - root-binaries
     - root-dependencies
     - boost-cpp
+  run_constrained:
+    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx]
 
 test:
   requires:
@@ -44,7 +47,6 @@ test:
 about:
   home: https://github.com/cofitzpa/simpletools
   license: GPL-2.0-only
-  license_family: GPL
   license_file: LICENSE
   summary: 'Handy command line tools for ntuple manipulation and analysis'
   doc_url: https://cds.cern.ch/record/1223091

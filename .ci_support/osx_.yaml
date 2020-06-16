@@ -1,5 +1,5 @@
 MACOSX_DEPLOYMENT_TARGET:
-- '10.9'
+- '10.13'
 boost_cpp:
 - '1.72'
 c_compiler:
@@ -22,4 +22,4 @@ pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
 root_base:
-- 6.20.2
+- '6.22'
