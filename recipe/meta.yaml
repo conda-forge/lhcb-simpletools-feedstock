@@ -27,6 +27,8 @@ requirements:
     - root-binaries
     - root-dependencies
     - boost-cpp
+  run_constrained:
+    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx]
 
 test:
   requires:
@@ -44,7 +46,6 @@ test:
 about:
   home: https://github.com/cofitzpa/simpletools
   license: GPL-2.0-only
-  license_family: GPL
   license_file: LICENSE
   summary: 'Handy command line tools for ntuple manipulation and analysis'
   doc_url: https://cds.cern.ch/record/1223091
