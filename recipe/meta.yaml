@@ -14,7 +14,7 @@ source:
     - 0003-Fix-includes-for-ROOT-6.22.patch
 
 build:
-  number: 7
+  number: 8
   skip: true  # [win]
 
 requirements:
