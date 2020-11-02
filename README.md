@@ -5,11 +5,13 @@ Home: https://github.com/cofitzpa/simpletools
 
 Package license: GPL-2.0-only
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/lhcb-simpletools-feedstock/blob/master/LICENSE.txt)
 
 Summary: Handy command line tools for ntuple manipulation and analysis
 
+Development: https://github.com/cofitzpa/simpletools
 
+Documentation: https://cds.cern.ch/record/1223091
 
 Current build status
 ====================
