@@ -8,10 +8,6 @@ package:
 source:
   url: https://github.com/cofitzpa/simpletools/archive/v{{ version }}.tar.gz
   sha256: 946984587505dd3d9147eac4798a7b3ab110a43872bc70ad4c8cd401d8783b90
-  patches:
-    - 0001-Fix-linking-for-macOS.patch
-    - 0002-Fix-random_shuffle.patch
-    - 0003-Fix-includes-for-ROOT-6.22.patch
 
 build:
   number: 0
