@@ -1,5 +1,5 @@
 {% set name = "lhcb-simpletools" %}
-{% set version = "2.0" %}
+{% set version = "3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://github.com/cofitzpa/simpletools/archive/v{{ version }}.tar.gz
-  sha256: c9b57458bf2078bdacb87dc2ef50c3cb9b85acc382a352c4c0a7d6ace22e116f
+  sha256: 946984587505dd3d9147eac4798a7b3ab110a43872bc70ad4c8cd401d8783b90
   patches:
     - 0001-Fix-linking-for-macOS.patch
     - 0002-Fix-random_shuffle.patch
     - 0003-Fix-includes-for-ROOT-6.22.patch
 
 build:
-  number: 8
+  number: 0
   skip: true  # [win]
 
 requirements:
@@ -53,7 +53,7 @@ about:
   home: https://github.com/cofitzpa/simpletools
   license: GPL-2.0-only
   license_file: LICENSE
-  summary: 'Handy command line tools for ntuple manipulation and analysis'
+  summary: Handy command line tools for ntuple manipulation and analysis
   doc_url: https://cds.cern.ch/record/1223091
   dev_url: https://github.com/cofitzpa/simpletools
 
