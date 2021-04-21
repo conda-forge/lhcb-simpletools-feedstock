@@ -10,7 +10,7 @@ source:
   sha256: 946984587505dd3d9147eac4798a7b3ab110a43872bc70ad4c8cd401d8783b90
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win]
 
 requirements:
@@ -21,8 +21,6 @@ requirements:
     - make
   host:
     - root_base
-    - root-binaries
-    - root-dependencies
     - boost-cpp
   run_constrained:
     - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx]
