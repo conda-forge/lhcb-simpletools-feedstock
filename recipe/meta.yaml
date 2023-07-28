@@ -29,12 +29,12 @@ test:
   requires:
     - scikit-hep-testdata
   commands:
-    # Some tests are disabled on osx due to https://cern.service-now.com/service-portal?id=ticket&table=incident&n=INC3533928
-    - FN=$(python -m skhep_testdata cms_hep_2012_tutorial/data.root)  # [not osx]
-    - cutapplier "${FN}" events "NJet>2" test_cut.root  # [not osx]
-    - cuttester "${FN}" events "${RECIPE_DIR}/cuts.txt"  # [not osx]
-    - tuplesampler "${FN}" events 0.3 1234 test1.root test2.root  # [not osx]
-    - columnmaker "${FN}" events "Jet_E**2" Jet_E2 test_col.root  # [not osx]
+    # Some tests are disabled due to https://cern.service-now.com/service-portal?id=ticket&table=incident&n=INC3533928
+    - FN=$(python -m skhep_testdata cms_hep_2012_tutorial/data.root)  # [true]
+    - cutapplier "${FN}" events "NJet>2" test_cut.root  # [true]
+    - cuttester "${FN}" events "${RECIPE_DIR}/cuts.txt"  # [true]
+    - tuplesampler "${FN}" events 0.3 1234 test1.root test2.root  # [true]
+    - columnmaker "${FN}" events "Jet_E**2" Jet_E2 test_col.root  # [true]
     - which stacker
     - which stackergen
     - which crop
