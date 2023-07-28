@@ -1,11 +1,11 @@
-About lhcb-simpletools
-======================
+About lhcb-simpletools-feedstock
+================================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/lhcb-simpletools-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/cofitzpa/simpletools
 
 Package license: GPL-2.0-only
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/lhcb-simpletools-feedstock/blob/main/LICENSE.txt)
 
 Summary: Handy command line tools for ntuple manipulation and analysis
 
@@ -34,14 +34,14 @@ Current build status
               <td>linux_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6695&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/lhcb-simpletools-feedstock?branchName=main&jobName=linux&configuration=linux_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/lhcb-simpletools-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
               <td>osx_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6695&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/lhcb-simpletools-feedstock?branchName=main&jobName=osx&configuration=osx_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/lhcb-simpletools-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
                 </a>
               </td>
             </tr>
