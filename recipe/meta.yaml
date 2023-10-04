@@ -21,7 +21,7 @@ requirements:
     - make
   host:
     - root_base
-    - libboost-headers
+    - libboost-devel
   run_constrained:
     - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx]
 
