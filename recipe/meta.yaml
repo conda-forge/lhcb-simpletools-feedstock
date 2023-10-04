@@ -12,6 +12,9 @@ source:
 build:
   number: 12
   skip: true  # [win]
+  ignore_run_export_from:
+    # needs CMake metadata to build but doesn't link
+    - libboost-devel
 
 requirements:
   build:
