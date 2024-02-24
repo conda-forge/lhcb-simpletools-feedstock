@@ -17,7 +17,7 @@ docker_image:
 libboost_devel:
 - '1.82'
 root_base:
-- 6.30.2
+- 6.28.12
 target_platform:
 - linux-64
 zip_keys:
