@@ -1,0 +1,64 @@
+schema_version: 1
+
+context:
+  name: lhcb-simpletools
+  version: "3.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://github.com/cofitzpa/simpletools/archive/v${{ version }}.tar.gz
+  sha256: 946984587505dd3d9147eac4798a7b3ab110a43872bc70ad4c8cd401d8783b90
+  patches:
+    - gh-14.patch
+
+build:
+  number: 24
+  skip:
+    - win
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ stdlib("c") }}
+    - ${{ compiler('cxx') }}
+    - cmake
+    - make
+  host:
+    - root_base
+    - libboost-devel
+  ignore_run_exports:
+    by_name:
+      - libboost-devel
+
+tests:
+  - script:
+      - which stacker
+      - which stackergen
+      - which crop
+  - requirements:
+      run:
+        - scikit-hep-testdata
+    files:
+      recipe:
+        - cuts.txt
+    script:
+      - FN=$(python -m skhep_testdata cms_hep_2012_tutorial/data.root)
+      - cutapplier "${FN}" events "NJet>2" test_cut.root
+      - cuttester "${FN}" events "cuts.txt"
+      - tuplesampler "${FN}" events 0.3 1234 test1.root test2.root
+      - columnmaker "${FN}" events "Jet_E**2" Jet_E2 test_col.root
+
+about:
+  homepage: https://github.com/cofitzpa/simpletools
+  license: GPL-2.0-only
+  license_file: LICENSE
+  summary: Handy command line tools for ntuple manipulation and analysis
+  documentation: https://cds.cern.ch/record/1223091
+  repository: https://github.com/cofitzpa/simpletools
+
+extra:
+  recipe-maintainers:
+    - chrisburr
