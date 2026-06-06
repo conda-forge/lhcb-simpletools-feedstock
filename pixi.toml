@@ -5,7 +5,7 @@
 
 [workspace]
 name = "lhcb-simpletools-feedstock"
-version = "3.55.1"  # conda-smithy version used to generate this file
+version = "2026.5.29"  # conda-smithy version used to generate this file
 description = "Pixi configuration for conda-forge/lhcb-simpletools-feedstock"
 authors = ["@conda-forge/lhcb-simpletools"]
 channels = ["conda-forge"]
@@ -13,7 +13,7 @@ platforms = ["linux-64", "linux-aarch64", "linux-ppc64le", "osx-64", "osx-arm64"
 requires-pixi = ">=0.59.0"
 
 [dependencies]
-conda-build = ">=24.1"
+conda-build = ">=26.3"
 conda-forge-ci-setup = "4.*"
 rattler-build = "*"
 
@@ -23,66 +23,96 @@ description = "List contents of all packages found in rattler-build build direct
 [tasks.build]
 cmd = "rattler-build build --recipe recipe"
 description = "Build lhcb-simpletools-feedstock directly (without setup scripts), no particular variant specified"
-[tasks."build-linux_64_root_base6.36.8"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_root_base6.36.8.yaml"
-description = "Build lhcb-simpletools-feedstock with variant linux_64_root_base6.36.8 directly (without setup scripts)"
-[tasks."inspect-linux_64_root_base6.36.8"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_root_base6.36.8.yaml"
-description = "List contents of lhcb-simpletools-feedstock packages built for variant linux_64_root_base6.36.8"
-[tasks."build-linux_64_root_base6.38.0"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_root_base6.38.0.yaml"
-description = "Build lhcb-simpletools-feedstock with variant linux_64_root_base6.38.0 directly (without setup scripts)"
-[tasks."inspect-linux_64_root_base6.38.0"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_root_base6.38.0.yaml"
-description = "List contents of lhcb-simpletools-feedstock packages built for variant linux_64_root_base6.38.0"
-[tasks."build-linux_aarch64_root_base6.36.8"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_root_base6.36.8.yaml"
-description = "Build lhcb-simpletools-feedstock with variant linux_aarch64_root_base6.36.8 directly (without setup scripts)"
-[tasks."inspect-linux_aarch64_root_base6.36.8"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_root_base6.36.8.yaml"
-description = "List contents of lhcb-simpletools-feedstock packages built for variant linux_aarch64_root_base6.36.8"
-[tasks."build-linux_aarch64_root_base6.38.0"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_root_base6.38.0.yaml"
-description = "Build lhcb-simpletools-feedstock with variant linux_aarch64_root_base6.38.0 directly (without setup scripts)"
-[tasks."inspect-linux_aarch64_root_base6.38.0"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_root_base6.38.0.yaml"
-description = "List contents of lhcb-simpletools-feedstock packages built for variant linux_aarch64_root_base6.38.0"
-[tasks."build-linux_ppc64le_root_base6.36.8"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_root_base6.36.8.yaml"
-description = "Build lhcb-simpletools-feedstock with variant linux_ppc64le_root_base6.36.8 directly (without setup scripts)"
-[tasks."inspect-linux_ppc64le_root_base6.36.8"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_root_base6.36.8.yaml"
-description = "List contents of lhcb-simpletools-feedstock packages built for variant linux_ppc64le_root_base6.36.8"
-[tasks."build-linux_ppc64le_root_base6.38.0"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_root_base6.38.0.yaml"
-description = "Build lhcb-simpletools-feedstock with variant linux_ppc64le_root_base6.38.0 directly (without setup scripts)"
-[tasks."inspect-linux_ppc64le_root_base6.38.0"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_root_base6.38.0.yaml"
-description = "List contents of lhcb-simpletools-feedstock packages built for variant linux_ppc64le_root_base6.38.0"
-[tasks."build-osx_64_root_base6.36.8"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_root_base6.36.8.yaml"
-description = "Build lhcb-simpletools-feedstock with variant osx_64_root_base6.36.8 directly (without setup scripts)"
-[tasks."inspect-osx_64_root_base6.36.8"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_root_base6.36.8.yaml"
-description = "List contents of lhcb-simpletools-feedstock packages built for variant osx_64_root_base6.36.8"
-[tasks."build-osx_64_root_base6.38.0"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_root_base6.38.0.yaml"
-description = "Build lhcb-simpletools-feedstock with variant osx_64_root_base6.38.0 directly (without setup scripts)"
-[tasks."inspect-osx_64_root_base6.38.0"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_root_base6.38.0.yaml"
-description = "List contents of lhcb-simpletools-feedstock packages built for variant osx_64_root_base6.38.0"
-[tasks."build-osx_arm64_root_base6.36.8"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_root_base6.36.8.yaml"
-description = "Build lhcb-simpletools-feedstock with variant osx_arm64_root_base6.36.8 directly (without setup scripts)"
-[tasks."inspect-osx_arm64_root_base6.36.8"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_root_base6.36.8.yaml"
-description = "List contents of lhcb-simpletools-feedstock packages built for variant osx_arm64_root_base6.36.8"
-[tasks."build-osx_arm64_root_base6.38.0"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_root_base6.38.0.yaml"
-description = "Build lhcb-simpletools-feedstock with variant osx_arm64_root_base6.38.0 directly (without setup scripts)"
-[tasks."inspect-osx_arm64_root_base6.38.0"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_root_base6.38.0.yaml"
-description = "List contents of lhcb-simpletools-feedstock packages built for variant osx_arm64_root_base6.38.0"
+[tasks."build-linux_64_root_base6.36.10"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_root_base6.36.10.yaml"
+description = "Build lhcb-simpletools-feedstock with variant linux_64_root_base6.36.10 directly (without setup scripts)"
+[tasks."inspect-linux_64_root_base6.36.10"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_root_base6.36.10.yaml"
+description = "List contents of lhcb-simpletools-feedstock packages built for variant linux_64_root_base6.36.10"
+[tasks."build-linux_64_root_base6.38.4"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_root_base6.38.4.yaml"
+description = "Build lhcb-simpletools-feedstock with variant linux_64_root_base6.38.4 directly (without setup scripts)"
+[tasks."inspect-linux_64_root_base6.38.4"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_root_base6.38.4.yaml"
+description = "List contents of lhcb-simpletools-feedstock packages built for variant linux_64_root_base6.38.4"
+[tasks."build-linux_64_root_base6.40.0"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_root_base6.40.0.yaml"
+description = "Build lhcb-simpletools-feedstock with variant linux_64_root_base6.40.0 directly (without setup scripts)"
+[tasks."inspect-linux_64_root_base6.40.0"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_root_base6.40.0.yaml"
+description = "List contents of lhcb-simpletools-feedstock packages built for variant linux_64_root_base6.40.0"
+[tasks."build-linux_aarch64_root_base6.36.10"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_root_base6.36.10.yaml"
+description = "Build lhcb-simpletools-feedstock with variant linux_aarch64_root_base6.36.10 directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_root_base6.36.10"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_root_base6.36.10.yaml"
+description = "List contents of lhcb-simpletools-feedstock packages built for variant linux_aarch64_root_base6.36.10"
+[tasks."build-linux_aarch64_root_base6.38.4"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_root_base6.38.4.yaml"
+description = "Build lhcb-simpletools-feedstock with variant linux_aarch64_root_base6.38.4 directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_root_base6.38.4"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_root_base6.38.4.yaml"
+description = "List contents of lhcb-simpletools-feedstock packages built for variant linux_aarch64_root_base6.38.4"
+[tasks."build-linux_aarch64_root_base6.40.0"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_root_base6.40.0.yaml"
+description = "Build lhcb-simpletools-feedstock with variant linux_aarch64_root_base6.40.0 directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_root_base6.40.0"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_root_base6.40.0.yaml"
+description = "List contents of lhcb-simpletools-feedstock packages built for variant linux_aarch64_root_base6.40.0"
+[tasks."build-linux_ppc64le_root_base6.36.10"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_root_base6.36.10.yaml"
+description = "Build lhcb-simpletools-feedstock with variant linux_ppc64le_root_base6.36.10 directly (without setup scripts)"
+[tasks."inspect-linux_ppc64le_root_base6.36.10"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_root_base6.36.10.yaml"
+description = "List contents of lhcb-simpletools-feedstock packages built for variant linux_ppc64le_root_base6.36.10"
+[tasks."build-linux_ppc64le_root_base6.38.4"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_root_base6.38.4.yaml"
+description = "Build lhcb-simpletools-feedstock with variant linux_ppc64le_root_base6.38.4 directly (without setup scripts)"
+[tasks."inspect-linux_ppc64le_root_base6.38.4"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_root_base6.38.4.yaml"
+description = "List contents of lhcb-simpletools-feedstock packages built for variant linux_ppc64le_root_base6.38.4"
+[tasks."build-linux_ppc64le_root_base6.40.0"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_root_base6.40.0.yaml"
+description = "Build lhcb-simpletools-feedstock with variant linux_ppc64le_root_base6.40.0 directly (without setup scripts)"
+[tasks."inspect-linux_ppc64le_root_base6.40.0"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_root_base6.40.0.yaml"
+description = "List contents of lhcb-simpletools-feedstock packages built for variant linux_ppc64le_root_base6.40.0"
+[tasks."build-osx_64_root_base6.36.10"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_root_base6.36.10.yaml"
+description = "Build lhcb-simpletools-feedstock with variant osx_64_root_base6.36.10 directly (without setup scripts)"
+[tasks."inspect-osx_64_root_base6.36.10"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_root_base6.36.10.yaml"
+description = "List contents of lhcb-simpletools-feedstock packages built for variant osx_64_root_base6.36.10"
+[tasks."build-osx_64_root_base6.38.4"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_root_base6.38.4.yaml"
+description = "Build lhcb-simpletools-feedstock with variant osx_64_root_base6.38.4 directly (without setup scripts)"
+[tasks."inspect-osx_64_root_base6.38.4"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_root_base6.38.4.yaml"
+description = "List contents of lhcb-simpletools-feedstock packages built for variant osx_64_root_base6.38.4"
+[tasks."build-osx_64_root_base6.40.0"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_root_base6.40.0.yaml"
+description = "Build lhcb-simpletools-feedstock with variant osx_64_root_base6.40.0 directly (without setup scripts)"
+[tasks."inspect-osx_64_root_base6.40.0"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_root_base6.40.0.yaml"
+description = "List contents of lhcb-simpletools-feedstock packages built for variant osx_64_root_base6.40.0"
+[tasks."build-osx_arm64_root_base6.36.10"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_root_base6.36.10.yaml"
+description = "Build lhcb-simpletools-feedstock with variant osx_arm64_root_base6.36.10 directly (without setup scripts)"
+[tasks."inspect-osx_arm64_root_base6.36.10"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_root_base6.36.10.yaml"
+description = "List contents of lhcb-simpletools-feedstock packages built for variant osx_arm64_root_base6.36.10"
+[tasks."build-osx_arm64_root_base6.38.4"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_root_base6.38.4.yaml"
+description = "Build lhcb-simpletools-feedstock with variant osx_arm64_root_base6.38.4 directly (without setup scripts)"
+[tasks."inspect-osx_arm64_root_base6.38.4"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_root_base6.38.4.yaml"
+description = "List contents of lhcb-simpletools-feedstock packages built for variant osx_arm64_root_base6.38.4"
+[tasks."build-osx_arm64_root_base6.40.0"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_root_base6.40.0.yaml"
+description = "Build lhcb-simpletools-feedstock with variant osx_arm64_root_base6.40.0 directly (without setup scripts)"
+[tasks."inspect-osx_arm64_root_base6.40.0"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_root_base6.40.0.yaml"
+description = "List contents of lhcb-simpletools-feedstock packages built for variant osx_arm64_root_base6.40.0"
 
 [feature.smithy.dependencies]
 conda-smithy = "*"
