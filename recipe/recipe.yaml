@@ -15,7 +15,7 @@ source:
     - gh-14.patch
 
 build:
-  number: 25
+  number: 26
   skip:
     - win
 
