@@ -13,6 +13,10 @@ source:
   sha256: 946984587505dd3d9147eac4798a7b3ab110a43872bc70ad4c8cd401d8783b90
   patches:
     - gh-14.patch
+    # Boost 1.90 dropped the compiled Boost.System library, so the CMake
+    # component no longer exists. Only header-only Boost is actually used.
+    # Not yet submitted upstream.
+    - boost-headers.patch
 
 build:
   number: 28
@@ -30,7 +34,8 @@ requirements:
     - root_base
     - libboost-devel
   ignore_run_exports:
-    by_name:
+    # needed for the CMake metadata and headers, but nothing is linked
+    from_package:
       - libboost-devel
 
 tests:
